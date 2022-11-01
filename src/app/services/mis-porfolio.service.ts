@@ -8,8 +8,8 @@ import { MiPorfolio } from '../interfaces/mi-porfolio';
   providedIn: 'root'
 })
 export class MisPorfolioService {
-  miUrl:string = 'http://localhost:8080/'
-  // miUrl:string = environment.URL
+  // miUrl:string = 'http://localhost:8080/'
+  miUrl:string = environment.URL
   private urlEndPoint:string =  this.miUrl + 'porfolio';
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'})
 

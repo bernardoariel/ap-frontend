@@ -8,8 +8,8 @@ import { MiPerfil } from '../interfaces/mi-perfil';
   providedIn: 'root'
 })
 export class MiPerfilService {
-  miUrl:string = 'http://localhost:8080/'
-  // miUrl:string = environment.URL
+  // miUrl:string = 'http://localhost:8080/'
+  miUrl:string = environment.URL
   private urlEndPoint:string =  this.miUrl + 'perfil';
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'})
   constructor(private http: HttpClient) { }

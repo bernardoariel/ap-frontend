@@ -8,8 +8,8 @@ import { environment } from 'src/environments/environment.prod';
   providedIn: 'root'
 })
 export class MiExperienciaService {
-  miUrl:string = 'http://localhost:8080/'
-  // miUrl:string = environment.URL
+  // miUrl:string = 'http://localhost:8080/'
+  miUrl:string = environment.URL
   private urlEndPoint:string =  this.miUrl + 'trabajo';
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'})
   constructor(private http: HttpClient) { }

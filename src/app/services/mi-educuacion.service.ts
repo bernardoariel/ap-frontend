@@ -7,8 +7,8 @@ import { environment } from 'src/environments/environment.prod';
   providedIn: 'root'
 })
 export class MiEducuacionService {
-  miUrl:string = 'http://localhost:8080/'
-  // miUrl:string = environment.URL
+  // miUrl:string = 'http://localhost:8080/'
+  miUrl:string = environment.URL
   private urlEndPoint:string =  this.miUrl + 'educacion';
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'})
   constructor(private http: HttpClient) { }

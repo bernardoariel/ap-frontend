@@ -8,8 +8,8 @@ import { MisSkill } from '../interfaces/mis-skill';
   providedIn: 'root'
 })
 export class MisSkillService {
-  miUrl:string = 'http://localhost:8080/'
-  // miUrl:string = environment.URL
+  // miUrl:string = 'http://localhost:8080/'
+  miUrl:string = environment.URL
   private urlEndPoint:string = this.miUrl + 'habilidad';
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'})
   constructor(private http: HttpClient) { }

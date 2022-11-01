@@ -18,7 +18,7 @@ export class MiPorfolioComponent implements OnInit {
     this.miPorfolioService.getPorfolio().subscribe(
       (proyecto)=>{
         this.misProyectos = proyecto
-        console.log(proyecto)
+        console.log("proyectos",proyecto)
       }
     )
     this.bndLogin = this.miLogin.logueado()
@@ -57,16 +57,17 @@ export class MiPorfolioComponent implements OnInit {
 
     this.miPorfolioService.getPorfolioxId(id).subscribe(
       (miPorfolio)=>{
-      console.log(miPorfolio)
+      console.log("abriendo",miPorfolio ,tipo)
         switch (tipo) {
           case 'demo':
-            window.open(miPorfolio?.demourl , "_blank");
+            console.log(miPorfolio?.demoUrl )
+            window.open(miPorfolio?.demoUrl , "_blank");
             break;
           case 'backend':
-            window.open(miPorfolio?.backend , "_blank");
+            window.open(miPorfolio?.backUrl , "_blank");
             break;
-          case 'backend':
-            window.open(miPorfolio?.backend , "_blank");
+          case 'frontend':
+            window.open(miPorfolio?.frontUrl , "_blank");
             break;
         }
 
