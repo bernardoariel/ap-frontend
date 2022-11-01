@@ -1,0 +1,34 @@
+<nav class="navbar bg-info navbar-dark">
+
+  <div class="container-fluid">
+
+    <div class="col-lg-1 ps-2">
+      <a class="navbar-brand" href="#"><img src="assets/img/logo.png" width="118" alt="logo" /></a>
+    </div>
+
+    <div class="col-lg-9">
+
+        <span class="font-weight-bold">  Argentina Programa</span>
+
+    </div>
+    <div class="col ">
+
+      <button class="btn btn-link text-dark" (click)="abrirLink('http://www.linkedin.com/in/ariel-bernardo-90ba34155')"><i class="fa fa-linkedin" aria-hidden="true"></i></button>
+      <button class="btn btn-link text-dark" (click)="abrirLink('https://www.youtube.com/user/bernardock')"><i class="fa fa-youtube" aria-hidden="true"></i></button>
+
+        <button
+          class="btn btn-outline-light"
+          (click)="accion()"
+          >
+          <i class="{{iconoBoton}}" aria-hidden="true"></i>
+          {{labelBoton}}
+        </button>
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>

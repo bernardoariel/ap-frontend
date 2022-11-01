@@ -1,0 +1,58 @@
+<div class="container-fluid bg-info pt-5">
+
+  <div class="row">
+
+    <div class="col-lg-7">
+
+      <h2 class="pb-3 text-white text-end">MI EDUCACION</h2>
+
+    </div>
+
+    <div class="col-lg-5">
+
+      <button *ngIf="bndLogin" class="btn btn-secondary" [routerLink]="['agregar/agregar-educacion']">Agregar</button>
+
+    </div>
+
+  </div>
+  <hr class="text-white">
+
+
+<ng-container *ngIf="bndLogin;else elseEducacion">
+  <div class="row"  *ngFor="let educacion of miEducacion">
+
+
+    <div class="col-lg-2  offset-lg-3 mt-5" *ngIf="bndLogin">
+      <div class="btn-group" role="group" aria-label="">
+        <button type="button" class="btn btn-warning" [routerLink]="['/edicion/','editar-educacion',educacion.id]"><small>Editar</small></button>
+        <button type="button" class="btn btn-danger" (click)="eliminarEducacion(educacion)"><small>Eliminar</small></button>
+      </div>
+    </div>
+
+    <div class="col-lg-3 text-white">
+      <h3>{{ educacion.titulo }}</h3>
+      <h3>{{ educacion.institution }}</h3>
+      <p>{{ educacion.descripcion}}</p>
+    </div>
+    <div class="col-lg-2 text-center">
+      <img src="{{educacion.imagen}}" class="img-fluid">
+    </div>
+    <hr class="text-secondary pb-3">
+  </div>
+
+</ng-container>
+<ng-template #elseEducacion>
+  <div class="row"  *ngFor="let educacion of miEducacion">
+
+    <div class="col-lg-6 text-white text-end">
+      <h3>{{ educacion.titulo }}</h3>
+      <h3>{{ educacion.institution }}</h3>
+      <p>{{ educacion.descripcion}}</p>
+    </div>
+    <div class="col-lg-2 text-center">
+      <img src="{{educacion.imagen}}" class="img-fluid">
+    </div>
+    <hr class="text-secondary pb-3">
+  </div>
+</ng-template>
+</div>

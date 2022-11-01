@@ -1,0 +1,51 @@
+<section class="bg-dark pt-5">
+  <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-12 col-lg-6 mb-4 order-0 order-sm-0">
+          <a class="text-decoration-none" href="#">
+            <img src="assets/img/footer-logo.png" height="51" alt="" />
+          </a>
+          <p class="text-light my-4">Para integrarnos al mundo digital <br />necesitamos un constante aprendizaje.</p>
+          <button *ngIf="bndLogin" class="btn btn-secondary" [routerLink]="['/agregar/','agregar-skill']">Agregar</button>
+        </div>
+
+        <div class="col-6 col-sm-4 col-lg-2 mb-3 order-2 order-sm-1 text-center" *ngFor="let skill of misHabilidades;">
+          <circle-progress
+          [percent]="skill.porcentaje"
+          [radius]="75"
+          [title]="skill.nombre | uppercase"
+          [subtitle]="skill.descripcion | lowercase"
+          [showUnits]="false"
+          [outerStrokeColor]=" '#xxxxxx' | colores"
+          [innerStrokeColor]="'#1f3f60'"
+          [animation]="true"
+          [animationDuration]="300"
+          ></circle-progress>
+
+            <div *ngIf="bndLogin">
+              <button type="button" class="btn btn-warning btn-sm me-2" [routerLink]="['/edicion/','editar-habilidad',skill.id]"><small>Editar</small></button>
+              <button type="button" class="btn btn-danger btn-sm" (click)="eliminarSkill(skill)"><small>Eliminar</small></button>
+            </div>
+
+
+        </div>
+        <!-- <div class="col-6 col-sm-4 col-lg-2 mb-3 order-2 order-sm-1" *ngFor="let skill of misHabilidades;">
+          <circle-progress
+            [percent]="skill.porcentaje"
+            [radius]="75"
+            [title]="skill.nombre | uppercase"
+            [subtitle]="skill.nombre | lowercase"
+            [showUnits]="false"
+            [outerStrokeColor]=" '#xxxxxx' | mayusculas"
+            [innerStrokeColor]="'#1f3f60'"
+            [animation]="true"
+            [animationDuration]="300"
+          ></circle-progress>
+
+        </div> -->
+
+
+
+      </div>
+    </div>
+</section>

@@ -1,0 +1,68 @@
+<div class="container">
+  <form autocomplete="off" [formGroup]="miFormulario" (ngSubmit)="guardar()" class="pt-5">
+
+    <!-- titulo -->
+    <div class="form-floating mb-3">
+
+      <input type="text"
+      class="form-control"
+      placeholder= "Ingrese su nombre"
+      id="txNombre"
+      formControlName="nombre"
+     >
+
+      <label for="txNombre">Su Nombre:</label>
+
+      <span *ngIf="campoEsValido('nombre')"
+            class="form-text text-danger">Este campo es obligatorio
+      </span>
+
+    </div>
+    <!-- APELLIDO -->
+    <div class="form-floating mb-3">
+
+      <input type="text"
+             class="form-control" placeholder="Ingrese su apellido"
+             id="txApellido"
+             formControlName="apellido"
+             >
+
+      <label for="txApellido">Su Apellido:</label>
+
+      <span *ngIf="campoEsValido('apellido')"
+            class="form-text text-danger">Este campo es obligatorio
+      </span>
+
+    </div>
+    <!-- MENSAJE -->
+    <textarea class="form-control mb-2"
+              formControlName="mensaje"
+              cols="30" rows="6"
+             >
+    </textarea>
+    <!-- APELLIDO -->
+    <div class="form-floating mb-3">
+
+      <input type="text"
+             class="form-control" placeholder="Ingrese su apellido"
+             id="txFoto"
+             formControlName="foto"
+             >
+
+      <label for="txFoto">Su Foto de Perfil es:</label>
+
+      <span *ngIf="campoEsValido('foto')"
+            class="form-text text-danger">Este campo es obligatorio
+      </span>
+
+    </div>
+    <button type="button" class="btn btn-secondary float-start" routerLink="/">
+      Cancelar
+    </button>
+    <button type="submit" class="btn btn-info float-end">
+      Guardar !
+    </button>
+
+  </form>
+</div>
+

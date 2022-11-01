@@ -1,0 +1,141 @@
+
+<div class="container">
+  <h3 class="mt-4">Agregar un Nuevo Porfolio</h3>
+  <hr>
+  <form [formGroup]="miFormulario" class="mt-3" (ngSubmit)="guardarPorfolio()" class="pt-5">
+
+    <!-- nombre -->
+    <div class="form-floating mb-3">
+
+      <input type="text"
+      class="form-control"
+      placeholder= "ingrese"
+      id="txNombre"
+      formControlName="nombre"
+     >
+
+      <label for="txNombre">Nombre:</label>
+
+      <!-- <span *ngIf="campoEsValido('nombre')"
+            class="form-text text-danger">Este campo es obligatorio
+      </span> -->
+
+    </div>
+     <!-- Descripcion -->
+     <div class="form-floating mb-3">
+
+      <input type="text"
+      class="form-control"
+      placeholder= "Ingrese su nombre"
+      id="txNombre"
+      formControlName="descripcion"
+      >
+
+      <label for="txNombre">Descripcion:</label>
+
+      <!-- <span *ngIf="campoEsValido('nombre')"
+            class="form-text text-danger">Este campo es obligatorio
+      </span> -->
+
+    </div>
+    <!-- fecha -->
+    <div class="form-floating mb-3">
+
+      <input type="text"
+      class="form-control"
+      placeholder= "Ingresar descripcion "
+      id="txNombre"
+      formControlName="fecha"
+      [bsConfig]="{dateInputFormat: 'YYYY-MM-DD'}"
+                bsDatepicker
+      >
+
+      <label for="txNombre">Fecha:</label>
+
+      <!-- <span *ngIf="campoEsValido('nombre')"
+            class="form-text text-danger">Este campo es obligatorio
+      </span> -->
+
+    </div>
+    <!-- Imagen -->
+    <div class="form-floating mb-3">
+
+      <input type="text"
+      class="form-control"
+      placeholder= "Ingresar descripcion "
+      id="txImagen"
+      formControlName="imagen"
+      >
+
+      <label for="txNombre">Imagen:</label>
+
+      <!-- <span *ngIf="campoEsValido('nombre')"
+            class="form-text text-danger">Este campo es obligatorio
+      </span> -->
+
+    </div>
+    <!-- Front -->
+    <div class="form-floating mb-3">
+
+      <input type="text"
+      class="form-control"
+      placeholder= "Ingresar descripcion "
+      id="txImagen"
+      formControlName="frontUrl"
+      >
+
+      <label for="txNombre">Frontend:</label>
+
+      <!-- <span *ngIf="campoEsValido('nombre')"
+            class="form-text text-danger">Este campo es obligatorio
+      </span> -->
+
+    </div>
+    <!-- Back -->
+    <div class="form-floating mb-3">
+
+      <input type="text"
+      class="form-control"
+      placeholder= "Ingresar descripcion "
+      id="txImagen"
+      formControlName="backUrl"
+      >
+
+      <label for="txNombre">Backend:</label>
+
+      <!-- <span *ngIf="campoEsValido('nombre')"
+            class="form-text text-danger">Este campo es obligatorio
+      </span> -->
+
+    </div>
+    <!-- Back -->
+    <div class="form-floating mb-3">
+
+      <input type="text"
+      class="form-control"
+      placeholder= "Ingresar descripcion "
+      id="txImagen"
+      formControlName="demoUrl"
+      >
+
+      <label for="txNombre">Demo URL:</label>
+
+      <!-- <span *ngIf="campoEsValido('nombre')"
+            class="form-text text-danger">Este campo es obligatorio
+      </span> -->
+
+    </div>
+
+
+
+    <button type="button" class="btn btn-secondary float-start" routerLink="/">
+      Cancelar
+    </button>
+    <button type="submit" class="btn btn-info float-end">
+      Guardar !
+    </button>
+
+  </form>
+</div>
+
+

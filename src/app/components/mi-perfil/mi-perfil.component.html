@@ -1,0 +1,36 @@
+<div class="container-fluid">
+
+  <div class="row">
+
+    <div class="col-lg-3 miFoto">
+
+      <img class="rounded-circle img-fluid" width="300px" alt="ariel bernardo foto perfil" src="{{misDatos.foto}}"
+      data-holder-rendered="true">
+
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    <div class="col-lg-3 pt-2">
+      <h3 class="text-center">{{ misDatos.nombre | titlecase }}<strong>{{ misDatos.apellido | titlecase}}</strong></h3>
+      <h4 class="text-center">Programador FullStack</h4>
+    </div>
+
+    <div class="col-lg-7 ps-5">
+      <H2 class="miTextoTitulo">Ser programador </H2>
+      <p>{{ misDatos.mensaje}}</p>
+    </div>
+
+    <div class="col-lg-2">
+
+        <button *ngIf="bndLogin"
+          type="button" class="btn btn-warning"
+          [routerLink]="['/edicion/','editar-perfil',misDatos.id]"><small>Editar</small></button>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,59 @@
+<section class="vh-100" style="background-color: #508bfc;">
+
+  <div class="container py-5 h-100">
+
+    <div class="row d-flex justify-content-center align-items-center h-100">
+
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+
+        <div class="card shadow-2-strong" style="border-radius: 1rem;">
+
+          <div class="card-body p-5 text-center">
+
+            <h3 class="mb-5">Ingresar</h3>
+
+            <form [formGroup]="loginForm" (submit)="loginUser()">
+
+              <div class="form-outline mb-4">
+
+                <label class="form-label float-start" for="typeEmailX-2" >Email</label>
+                <input type="email"
+                       id="typeEmailX-2"
+                       class="form-control form-control-lg"
+                       formControlName="email"
+                       placeholder="email"/>
+                <br>
+                <span class="alert alert-danger mt-5" *ngIf="email?.errors?.['required'] && email?.touched" >El campo email es obligatorio</span>
+                <span class="alert alert-danger mt-5" *ngIf="email?.errors?.['email'] && email?.touched"> El formato del email no es correcto</span>
+              </div>
+
+              <div class="form-outline mb-4">
+                <label class="form-label float-start" for="typePasswordX-2">Password</label>
+                <input type="password"
+                       id="typePasswordX-2"
+                       class="form-control form-control-lg"
+                       formControlName="password"
+                />
+                <br>
+                <span class="alert alert-danger mt-5" *ngIf="email?.errors?.['required'] && email?.touched" >El campo password es obligatorio</span>
+
+              </div>
+
+              <div class="form-outline mb-4">
+                <button class="btn btn-info btn-lg float-start" type="submit" routerLink="/">Home</button>
+                <button class="btn btn-primary btn-lg float-end" style="width: 300px;" type="submit" [disabled]="loginForm.invalid">Login</button>
+
+              </div>
+
+            </form>
+            <br><br><br><br>
+            <div>
+                <span class="alert alert-danger" *ngIf="errorDatos()"> El usuario y/o contraseña no es valido</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

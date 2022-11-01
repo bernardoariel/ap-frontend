@@ -1,0 +1,37 @@
+<div class="container-fluid mt-5 pb-3">
+  <div class="row">
+    <div class="col-lg-4 mb-5 offset-lg-3">
+      <h2 class="text-center">MI PORFOLIO</h2>
+    </div>
+    <div class="col-lg-3">
+      <button *ngIf="bndLogin" class="btn btn-secondary" [routerLink]="['agregar/agregar-porfolio']">Agregar</button>
+    </div>
+  </div>
+
+  <div class="row"  *ngFor="let proyecto of misProyectos; let i = index;">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-2 ps-5">
+      <p><strong>{{ proyecto.nombre }}</strong> </p>
+      <p style="margin-top: -20px;"><small>Creacion: </small>{{ proyecto.fecha }}</p>
+      <button class="btn btn-link text-success"(click)="abrirLink(i+1,'backend')">Backend</button> ||
+      <button class="btn btn-link text-success" (click)="abrirLink(i+1,'frontend')" >Frontend</button>
+    </div>
+    <!-- <div class="col-lg-1  mt-2">
+      <img src="assets/img/miFoto.jpg" class="img-fluid">
+    </div> -->
+    <div class="col-lg-1  mt-2">
+      <img src="{{proyecto.imagen}}" class="img-fluid">
+    </div>
+    <div class="col-lg-2 pe-5 pt-2">
+      <p><strong>{{proyecto.descripcion}}</strong></p>
+      <button class="btn btn-link text-success" (click)="abrirLink(i+1,'demo')">Demo</button>
+
+    </div>
+    <div class="col-lg-2 pt-5" *ngIf="bndLogin">
+      <div class="btn-group" role="group" aria-label="">
+        <button type="button" class="btn btn-warning" [routerLink]="['/edicion/','editar-porfolio',proyecto.id]"><small>Editar</small></button>
+        <button type="button" class="btn btn-danger" (click)="eliminarPorfolio(proyecto)"><small>Eliminar</small></button>
+      </div>
+    </div>
+  </div>
+</div>

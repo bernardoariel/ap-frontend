@@ -1,0 +1,76 @@
+<div class="container-fluid mt-5 bg-dark pt-5 pb-3">
+  <!-- Encabezado de la experiencia laboral -->
+  <div class="row">
+
+    <div class="col-lg-7">
+
+      <h2 class="pb-3 text-white text-end">MI EXPERIENCIA LABORAL</h2>
+
+    </div>
+
+    <div class="col-lg-5">
+
+      <button *ngIf="bndLogin"
+        class="btn btn-secondary" [routerLink]="['/agregar/','agregar-trabajo']">Agregar</button>
+
+    </div>
+
+  </div>
+  <!-- FIN experiencia laboral -->
+  <hr class="text-white">
+
+  <ng-container *ngIf="bndLogin;else elseExperiencia">
+
+    <div class="row"  *ngFor="let trabajo of miTrabajo">
+
+      <div class="col-lg-2 text-center offset-lg-3 mt-5">
+
+        <img src="{{trabajo.imagen}}" class="img-fluid">
+
+      </div>
+
+      <div class="col-lg-3 text-white text-center">
+        <h3 class="pt-2">{{ trabajo.titulo }} </h3>
+        <h4>{{ trabajo.institution }}</h4>
+        <p>{{ trabajo.descripcion}}</p>
+        <p>Inicio: {{ trabajo.startDate }} - Hasta: {{trabajo.endDate}}</p>
+      </div>
+
+      <div class="col-lg-2 mt-5" *ngIf="bndLogin">
+        <div class="btn-group" role="group" aria-label="">
+          <button type="button" class="btn btn-warning" [routerLink]="['/edicion/','editar-trabajo',trabajo.id]"><small>Editar</small></button>
+          <button type="button" class="btn btn-danger" (click)="eliminarTrabajo(trabajo)"><small>Eliminar</small></button>
+        </div>
+      </div>
+
+      <hr class="text-danger">
+
+  </div>
+
+  </ng-container>
+
+
+  <ng-template #elseExperiencia>
+    <div class="row"  *ngFor="let trabajo of miTrabajo">
+
+      <div class="col-lg-5 mt-5">
+
+        <img src="{{trabajo.imagen}}" class="img-fluid float-end">
+
+      </div>
+
+      <div class="col-lg-6 text-white">
+        <h3 class="pt-2">{{ trabajo.titulo }} </h3>
+        <h4>{{ trabajo.institution }}</h4>
+        <p>{{ trabajo.descripcion}}</p>
+        <p>Inicio: {{ trabajo.startDate }} - Hasta: {{trabajo.endDate}}</p>
+      </div>
+
+
+
+      <hr class="text-danger">
+
+  </div>
+  </ng-template>
+
+</div>
